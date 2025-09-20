@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dedetização Profissional | Elimine Pragas com Segurança</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #eeca2a;
+      --primary-dark: #145a24;
+      --primary-light: #2e8b47;
+      --secondary: #25d366;
+      --accent: #ff9800;
+      --dark: #222;
+      --light: #f8f9fa;
+      --gray: #6c757d;
+      --light-gray: #e9ecef;
+      --white: #ffffff;
+      --shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4, h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--primary-dark);
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header */
+    header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+    
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .logo-container img {
+      max-width: 60px;
+      height: auto;
+      border-radius: 8px;
+    }
+    
+    .logo-text {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+    
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+    
+    .nav-menu a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+    
+    .nav-menu a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--white);
+      transition: var(--transition);
+    }
+    
+    .nav-menu a:hover:after {
+      width: 100%;
+    }
+    
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img\ ninja\ 1.jpg');
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+      padding: 80px 0;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: var(--secondary);
+      color: var(--white);
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-large {
+      font-size: 1.1rem;
+      padding: 16px 35px;
+    }
+    
+    /* Services Section */
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      width: 80px;
+      height: 3px;
+      background: var(--primary);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .services {
+      padding: 60px 0;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .service-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .service-img {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+    
+    .service-card:hover .service-img img {
+      transform: scale(1.05);
+    }
+    
+    .service-content {
+      padding: 20px;
+    }
+    
+    .service-content h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    
+    /* About Section */
+    .about {
+      padding: 60px 0;
+      background: var(--white);
+    }
+    
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    
+    .about-text {
+      padding-right: 20px;
+    }
+    
+    .about-img {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    .about-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .features {
+      margin-top: 25px;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .feature-icon {
+      background: var(--primary-light);
+      color: var(--white);
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-size: 0.9rem;
+    }
+    
+    /* Quiz Section */
+    .quiz-section {
+      padding: 60px 0;
+      background: var(--light-gray);
+    }
+    
+    .quiz-container {
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .quiz-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    
+    .quiz-progress {
+      height: 8px;
+      background: var(--light-gray);
+      border-radius: 10px;
+      margin-bottom: 25px;
+      overflow: hidden;
+    }
+    
+    .quiz-progress-bar {
+      height: 100%;
+      background: var(--primary);
+      border-radius: 10px;
+      width: 0%;
+      transition: width 0.5s ease;
+    }
+    
+    .quiz-step {
+      display: none;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .quiz-step.active {
+      display: block;
+    }
+    
+    .quiz-question {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--primary-dark);
+    }
+    
+    .quiz-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    
+    .quiz-option {
+      background: var(--light);
+      border: 2px solid var(--light-gray);
+      border-radius: 8px;
+      padding: 15px;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+    }
+    
+    .quiz-option:hover {
+      border-color: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .quiz-option.selected {
+      background: var(--primary-light);
+      color: var(--white);
+      border-color: var(--primary);
+    }
+    
+    .quiz-nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+    
+    .quiz-btn {
+      padding: 12px 25px;
+      background: var(--primary);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+    
+    .quiz-btn:hover {
+      background: var(--primary-dark);
+    }
+    
+    .quiz-btn.prev {
+      background: var(--gray);
+    }
+    
+    .quiz-btn.prev:hover {
+      background: #5a6268;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      padding: 60px 0;
+      background: var(--white);
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .testimonial-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: var(--shadow);
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    
+    .testimonial-text:before {
+      content: """;
+      font-size: 4rem;
+      color: var(--primary-light);
+      opacity: 0.2;
+      position: absolute;
+      top: -20px;
+      left: -10px;
+      font-family: sans-serif;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-weight: 600;
+      margin-right: 15px;
+    }
+    
+    .author-info h4 {
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+    
+    .author-info p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    
+    /* FAQ Section */
+    .faq {
+      padding: 60px 0;
+      background: var(--light-gray);
+    }
+    
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      background: var(--white);
+      border-radius: 8px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    .faq-question {
+      padding: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+    }
+    
+    .faq-answer {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 0 20px 20px;
+    }
+    
+    .faq-icon {
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+    
+    /* CTA Section */
+    .cta {
+      padding: 80px 0;
+      background: linear-gradient(to right, var(--primary), var(--primary-dark));
+      color: var(--white);
+      text-align: center;
+    }
+    
+    .cta h2 {
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    
+    .cta p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+    
+    .cta .btn {
+      background: var(--white);
+      color: var(--primary);
+    }
+    
+    .cta .btn:hover {
+      background: var(--light);
+      color: var(--primary-dark);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      padding: 60px 0 30px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-col h3 {
+      color: var(--white);
+      margin-bottom: 20px;
+      font-size: 1.3rem;
+    }
+    
+    .footer-col p, .footer-col a {
+      opacity: 0.8;
+      margin-bottom: 10px;
+      display: block;
+      transition: var(--transition);
+    }
+    
+    .footer-col a {
+      color: var(--white);
+      text-decoration: none;
+    }
+    
+    .footer-col a:hover {
+      opacity: 1;
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-in {
+      animation: fadeIn 1s ease forwards;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-text {
+        padding-right: 0;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 0 20px;
+      }
+      
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        background: var(--primary);
+        width: 100%;
+        height: calc(100vh - 70px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        gap: 30px;
+      }
+      
+      .nav-menu.active {
+        left: 0;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .quiz-options {
+        grid-template-columns: 1fr;
+      }
+      
+      .quiz-nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .quiz-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container header-container">
+      <div class="logo-container">
+        <img src="logo ninja.jpg" alt="Logo Dedetização">
+        <div class="logo-text">Ninja Dedetização</div>
+      </div>
+      
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#services">Serviços</a></li>
+        <li><a href="#about">Sobre Nós</a></li>
+        <li><a href="#quiz">Orçamento</a></li>
+        <li><a href="#testimonials">Avaliações</a></li>
+        <li><a href="#faq">Perguntas Frequentes</a></li>
+        <li><a href="#contact">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Elimine Pragas de Forma Rápida e Segura!</h1>
+      <p>Serviços profissionais de dedetização para residências e empresas com garantia de qualidade e eficiência.</p>
+      <a href="https://wa.me/5538991292731?text=Olá! Gostaria de mais informações sobre os serviços de dedetização." class="btn btn-large">
+        <i class="fab fa-whatsapp"></i> Falar no WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2 class="section-title">Nossos Serviços</h2>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-img">
+            <img src="img ninja 1.jpg" alt="Dedetização Residencial">
+          </div>
+          <div class="service-content">
+            <h3>Dedetização Residencial</h3>
+            <p>Proteja sua família e seu lar contra insetos e pragas com nossos serviços especializados para residências.</p>
+          </div>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="service-img">
+            <img src="img ninja 2.jpg" alt="Dedetização Comercial">
+          </div>
+          <div class="service-content">
+            <h3>Dedetização Comercial</h3>
+            <p>Soluciones eficientes para empresas, comércios e indústrias, minimizando interrupções nas atividades.</p>
+          </div>
+        </div>
+        
+        <div class="service-card fade-in">
+          <div class="service-img">
+            <img src="img ninja 2.jpg" alt="Controle de Pragas">
+          </div>
+          <div class="service-content">
+            <h3>Controle de Pragas</h3>
+            <p>Serviço especializado no controle de diversas pragas urbanas com produtos seguros e eficazes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title">Sobre Nossa Empresa</h2>
+          <p>Somos especializados em controle de pragas urbanas, oferecendo segurança e tranquilidade para sua casa ou empresa. Nossos profissionais utilizam produtos seguros e eficazes para eliminar insetos, roedores e outras pragas indesejadas.</p>
+          
+          <div class="features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div>Produtos seguros e autorizados pelos órgãos de saúde</div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div>Serviço rápido com mínimo de incômodo</div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-award"></i>
+              </div>
+              <div>Profissionais treinados e certificados</div>
+            </div>
+            
+            <div class="feature-item">
+              <div class="feature-icon">
+                <i class="fas fa-medal"></i>
+              </div>
+              <div>Garantia de satisfação em todos os serviços</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="about-img fade-in">
+          <img src="img ninja 2.jpg" alt="Equipe de Dedetização">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quiz Section -->
+  <section class="quiz-section" id="quiz">
+    <div class="container">
+      <h2 class="section-title">Solicite um Orçamento</h2>
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h3>Descubra a melhor solução para o seu problema</h3>
+          <p>Responda algumas perguntas para receber um orçamento personalizado</p>
+        </div>
+        
+        <div class="quiz-progress">
+          <div class="quiz-progress-bar" id="quizProgress"></div>
+        </div>
+        
+        <form id="quizForm">
+          <div class="quiz-step active" data-step="1">
+            <div class="quiz-question">1. Qual tipo de praga você está enfrentando?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="Baratas">Baratas</div>
+              <div class="quiz-option" data-value="Ratos">Ratos</div>
+              <div class="quiz-option" data-value="Formigas">Formigas</div>
+              <div class="quiz-option" data-value="Outros">Outros</div>
+            </div>
+            <div class="quiz-nav">
+              <div></div> <!-- Empty div for spacing -->
+              <button type="button" class="quiz-btn next" onclick="nextQuizStep(2)">Próximo</button>
+            </div>
+          </div>
+          
+          <div class="quiz-step" data-step="2">
+            <div class="quiz-question">2. Onde o problema está ocorrendo?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="Residência">Residência</div>
+              <div class="quiz-option" data-value="Empresa">Empresa</div>
+              <div class="quiz-option" data-value="Apartamento">Apartamento</div>
+              <div class="quiz-option" data-value="Outro">Outro</div>
+            </div>
+            <div class="quiz-nav">
+              <button type="button" class="quiz-btn prev" onclick="prevQuizStep(1)">Voltar</button>
+              <button type="button" class="quiz-btn next" onclick="nextQuizStep(3)">Próximo</button>
+            </div>
+          </div>
+          
+          <div class="quiz-step" data-step="3">
+            <div class="quiz-question">3. Qual a gravidade do problema?</div>
+            <div class="quiz-options">
+              <div class="quiz-option" data-value="Leve">Leve (visualizo ocasionalmente)</div>
+              <div class="quiz-option" data-value="Média">Média (visualizo com frequência)</div>
+              <div class="quiz-option" data-value="Alta">Alta (infestação visível)</div>
+            </div>
+            <div class="quiz-nav">
+              <button type="button" class="quiz-btn prev" onclick="prevQuizStep(2)">Voltar</button>
+              <button type="button" class="quiz-btn" onclick="submitQuiz()">Finalizar e Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-text">
+            <p>Excelente serviço! Profissionais muito competentes e educados. Resolveram nosso problema com formigas de forma rápida e eficiente.</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div class="author-info">
+              <h4>Maria Silva</h4>
+              <p>Residencial</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-text">
+            <p>Contratei para dedetizar meu restaurante e fiquei impressionado com a qualidade do serviço. Não tivemos que interromper nossas atividades.</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">J</div>
+            <div class="author-info">
+              <h4>João Santos</h4>
+              <p>Comercial</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-text">
+            <p>Estava com uma infestação de baratas e em apenas uma visita resolveram 95% do problema. Voltei para a manutenção e agora estou completamente satisfeita.</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">A</div>
+            <div class="author-info">
+              <h4>Ana Costa</h4>
+              <p>Residencial</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question">
+            Quanto tempo leva o processo de dedetização? <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p>O tempo varia conforme o tamanho do local e o tipo de praga. Em média, uma residência leva de 1 a 3 horas para ser completamente tratada.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            Preciso sair de casa durante a dedetização? <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p>Recomendamos que pessoas e animais deixem o local durante a aplicação e permaneçam fora por pelo menos 4 horas após o serviço, para garantir total segurança.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            Os produtos utilizados são seguros? <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p>Sim, utilizamos produtos registrados na Anvisa e seguimos todas as normas de segurança. Os produtos são eficazes contra pragas, mas têm baixa toxicidade para humanos e animais quando utilizados corretamente.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question">
+            Quanto tempo dura o efeito da dedetização? <span class="faq-icon"><i class="fas fa-chevron-down"></i></span>
+          </div>
+          <div class="faq-answer">
+            <p>O efeito residual varia conforme o produto aplicado e as condições do ambiente, mas geralmente dura entre 3 a 6 meses. Recomendamos manutenções periódicas para maior eficácia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta" id="contact">
+    <div class="container">
+      <h2>Pronto para resolver seu problema com pragas?</h2>
+      <p>Entre em contato conosco agora mesmo e agende uma visita técnica gratuita</p>
+      <a href="https://wa.me/559891182146?text=Olá! Gostaria de agendar uma visita técnica." class="btn btn-large">
+        <i class="fab fa-whatsapp"></i> Solicitar Orçamento
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Dedetização Profissional</h3>
+          <p>Sua solução completa contra pragas urbanas, com segurança, eficiência e garantia de qualidade.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Serviços</h3>
+          <a href="#">Dedetização Residencial</a>
+          <a href="#">Dedetização Comercial</a>
+          <a href="#">Controle de Pragas</a>
+          <a href="#">Desratização</a>
+          <a href="#">Desinsetização</a>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Links Rápidos</h3>
+          <a href="#services">Serviços</a>
+          <a href="#about">Sobre Nós</a>
+          <a href="#quiz">Orçamento</a>
+          <a href="#testimonials">Avaliações</a>
+          <a href="#faq">Perguntas Frequentes</a>
+        </div>
+        
+        <div class="footer-col">
+          <h3>Contato</h3>
+          <p><i class="fas fa-phone"></i> (38) 99129-2731</p>
+          <p><i class="fas fa-envelope"></i> contato@dedetizacaopro.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Seu Endereço, 123 - Cidade</p>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 Dedetização Profissional - Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+    
+    mobileMenuBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
+        ? '<i class="fas fa-times"></i>' 
+        : '<i class="fas fa-bars"></i>';
+    });
+    
+    // FAQ Accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      
+      question.addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+    
+    // Quiz Functionality
+    const quizSteps = document.querySelectorAll('.quiz-step');
+    const quizProgress = document.getElementById('quizProgress');
+    const quizOptions = document.querySelectorAll('.quiz-option');
+    let quizData = {
+      praga: '',
+      local: '',
+      gravidade: ''
+    };
+    
+    function updateQuizProgress() {
+      const currentStep = document.querySelector('.quiz-step.active').dataset.step;
+      const progress = (currentStep / quizSteps.length) * 100;
+      quizProgress.style.width = `${progress}%`;
+    }
+    
+    function nextQuizStep(step) {
+      document.querySelector('.quiz-step.active').classList.remove('active');
+      document.querySelector(`.quiz-step[data-step="${step}"]`).classList.add('active');
+      updateQuizProgress();
+      window.scrollTo({ top: document.querySelector('.quiz-section').offsetTop - 100, behavior: 'smooth' });
+    }
+    
+    function prevQuizStep(step) {
+      document.querySelector('.quiz-step.active').classList.remove('active');
+      document.querySelector(`.quiz-step[data-step="${step}"]`).classList.add('active');
+      updateQuizProgress();
+      window.scrollTo({ top: document.querySelector('.quiz-section').offsetTop - 100, behavior: 'smooth' });
+    }
+    
+    // Quiz option selection
+    quizOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        // Remove selected class from siblings
+        const siblings = option.parentElement.children;
+        for (let i = 0; i < siblings.length; i++) {
+          siblings[i].classList.remove('selected');
+        }
+        
+        // Add selected class to clicked option
+        option.classList.add('selected');
+        
+        // Store the selected value
+        const step = option.closest('.quiz-step').dataset.step;
+        if (step == 1) quizData.praga = option.dataset.value;
+        if (step == 2) quizData.local = option.dataset.value;
+        if (step == 3) quizData.gravidade = option.dataset.value;
+      });
+    });
+    
+    function submitQuiz() {
+      // Validate all questions were answered
+      if (!quizData.praga || !quizData.local || !quizData.gravidade) {
+        alert('Por favor, responda todas as perguntas antes de finalizar.');
+        return;
+      }
+      
+      const mensagem = `Olá! Gostaria de um orçamento para dedetização.\n\n*Tipo de praga:* ${quizData.praga}\n*Local do problema:* ${quizData.local}\n*Gravidade:* ${quizData.gravidade}`;
+      window.location.href = "https://wa.me/559891182146?text=" + encodeURIComponent(mensagem);
+    }
+    
+    // Animation on scroll
+    function checkScroll() {
+      const elements = document.querySelectorAll('.fade-in');
+      
+      elements.forEach(element => {
+        const position = element.getBoundingClientRect();
+        
+        // If element is in viewport
+        if (position.top < window.innerHeight - 100) {
+          element.style.opacity = 1;
+          element.style.transform = 'translateY(0)';
+        }
+      });
+    }
+    
+    // Set initial state for fade-in elements
+    document.querySelectorAll('.fade-in').forEach(element => {
+      element.style.opacity = 0;
+      element.style.transform = 'translateY(20px)';
+      element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    });
+    
+    // Check scroll on load and scroll
+    window.addEventListener('load', checkScroll);
+    window.addEventListener('scroll', checkScroll);
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          
+          // Close mobile menu if open
+          if (navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
